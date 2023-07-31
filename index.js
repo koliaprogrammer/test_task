@@ -4,7 +4,8 @@ try {
     (async () => {
         const browser = await puppeteer.launch({
             headless: false,
-            executablePath: process.env.EXECUTABLE_PATH
+            executablePath: process.env.EXECUTABLE_PATH,
+            args: ['--no-sandbox', '--disable-setuid-sandbox']
            
         });
         const page = await browser.newPage();
